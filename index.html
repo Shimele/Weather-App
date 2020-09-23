@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>working with APIS</title>
+    <title>Weather</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
@@ -11,19 +11,26 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="ui container">
+    <div class="ui center aligned basic very padded segment input-container">
       <h3>Your Weather Info</h3>
       <div class="ui action input">
-        <input type="text" placeholder="type location" class="cityInput" />
+        <input type="text" placeholder="type City" class="cityInput" />
         <button class="ui button">Search</button>
       </div>
-      <div class="notif"></div>
-      <div class="ui raised segment">
-        <div class="ui tiny image temp-icon">
-          <img class="ui image" />
-        </div>
+    </div>
+    <div class="ui container">
+      <div class="ui center aligned basic segment">
+        <div class="notif"></div>
         <div class="temp-location">
           <p>---</p>
+        </div>
+        <div class="temperature">
+          <p>---</p>
+        </div>
+      </div>
+      <div class="ui center aligned basic segment">
+        <div class="ui small image temp-icon">
+          <img class="ui image" />
         </div>
         <div class="temp-description">
           <p>---</p>
