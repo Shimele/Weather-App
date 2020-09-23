@@ -84,7 +84,7 @@ searchButton.addEventListener("click", function weatherInfo() {
         iconElement.src = "./icons/moderate.png";
       } else if (descriptElement.textContent == "clear sky") {
         iconElement.src = "./icons/clearSkies.png";
-      } else if (descriptElement.textContent == "light rain") {
+      } else if (descriptElement.textContent === "light rain") {
         iconElement.src = "./icons/light-rain.png";
       } else if (descriptElement.textContent == "heavy intensity rain") {
         iconElement.src = "./icons/heavy.png";
@@ -94,6 +94,8 @@ searchButton.addEventListener("click", function weatherInfo() {
         iconElement.src = "./icons/scattered.png";
       }else if (descriptElement.textContent == "mist") {
         iconElement.src = "./icons/mist.png";
+      }if (descriptElement.textContent === "thunderstorm") {
+        iconElement.src = "./icons/thunder.png";
       }
     });
 });

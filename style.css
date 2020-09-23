@@ -83,5 +83,7 @@ body {
   .temp-description, .wind-val, .temp-location, .notif{
     padding-top: 5%;
   }
- 
+  .temp-description, .wind-val, .temp-location, .notif{
+    padding-top: 1%;
+  }
 }
