@@ -43,7 +43,7 @@ searchButton.addEventListener("click", function weatherInfo() {
       openWeatherData.description = data.weather[0].description;
       openWeatherData.temperature = Math.round(data.main.temp);
       const wind = Math.round(data.wind.speed);
-      const time = new Date(data.dt * 1000 - data.timezone * 60000); //to display in miliseconds
+      const time = new Date(data.dt * 1000 - data.timezone); //to display in miliseconds
       console.log(time);
       let hours = time.getHours();
       let minutes = time.getMinutes();
