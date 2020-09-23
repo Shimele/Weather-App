@@ -73,23 +73,23 @@ searchButton.addEventListener("click", function weatherInfo() {
       windElement.textContent = "WindSpeed:" + wind + "mph";
 
       if (descriptElement.textContent == "thunderstorm with rain") {
-        iconElement.src = "/icons/thunderstorm.png";
+        iconElement.src = "./icons/thunderstorm.png";
       } else if (descriptElement.textContent == "overcast clouds") {
-        iconElement.src = "/icons/overcast.png";
+        iconElement.src = "./icons/overcast.png";
       } else if (descriptElement.textContent == "broken clouds") {
-        iconElement.src = "/icons/broken.png";
+        iconElement.src = "./icons/broken.png";
       } else if (descriptElement.textContent == "moderate rain") {
-        iconElement.src = "/icons/moderate.png";
+        iconElement.src = "./icons/moderate.png";
       } else if (descriptElement.textContent == "clear sky") {
-        iconElement.src = "/icons/clearSkies.png";
+        iconElement.src = "./icons/clearSkies.png";
       } else if (descriptElement.textContent == "light rain") {
-        iconElement.src = "/icons/light-rain.png";
+        iconElement.src = "./icons/light-rain.png";
       } else if (descriptElement.textContent == "heavy intensity rain") {
-        iconElement.src = "/icons/heavy.png";
+        iconElement.src = "./icons/heavy.png";
       } else if (descriptElement.textContent == "few clouds") {
-        iconElement.src = "/icons/few-clouds.png";
+        iconElement.src = "./icons/few-clouds.png";
       } else if (descriptElement.textContent == "scattered clouds") {
-        iconElement.src = "/icons/scattered.png";
+        iconElement.src = "./icons/scattered.png";
       }
     });
 });
