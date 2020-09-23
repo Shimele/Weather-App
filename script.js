@@ -1,4 +1,3 @@
-
 //selecting elements
 const searchButton = document.querySelector(".button");
 const temperature = document.querySelector(".temperature p");
@@ -43,7 +42,7 @@ searchButton.addEventListener("click", function weatherInfo() {
       openWeatherData.description = data.weather[0].description;
       openWeatherData.temperature = Math.round(data.main.temp);
       const wind = Math.round(data.wind.speed);
-      const time = new Date(data.dt * 1000 - data.timezone); //to display in miliseconds
+      const time = new Date(data.dt * 1000 - data.timezone * 1000); //to display in miliseconds
       console.log(time);
       let hours = time.getHours();
       let minutes = time.getMinutes();
@@ -67,7 +66,7 @@ searchButton.addEventListener("click", function weatherInfo() {
       }
 
       //Populate Weather
-      
+
       notifElement.textContent = `Hi, it's ${timeDisplay}`;
       locationElement.textContent = openWeatherData.location;
       temperature.textContent = `${openWeatherData.temperature}°`;
@@ -92,9 +91,13 @@ searchButton.addEventListener("click", function weatherInfo() {
         iconElement.src = "./icons/few-clouds.png";
       } else if (descriptElement.textContent == "scattered clouds") {
         iconElement.src = "./icons/scattered.png";
-      }else if (descriptElement.textContent == "mist") {
+      } else if (descriptElement.textContent == "mist") {
         iconElement.src = "./icons/mist.png";
-      }if (descriptElement.textContent === "thunderstorm" || descriptElement.textContent === "thunderstorm with light rain") {
+      }
+      if (
+        descriptElement.textContent === "thunderstorm" ||
+        descriptElement.textContent === "thunderstorm with light rain"
+      ) {
         iconElement.src = "./icons/thunder.png";
       }
     });

@@ -1,89 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Dosis:wght@600&family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Dosis:wght@600&family=Lobster&display=swap");
 
 body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Baloo Tammudu 2', cursive;
-  background-color: #F7BB07;;
-  
+  font-family: "Baloo Tammudu 2", cursive;
+  background-color: #f7bb07;
 }
 .ui.container {
   color: white;
-  background-color: #070D27;
+  background-color: #070d27;
   min-height: 35rem;
   min-width: 80%;
   margin: 0 auto;
   border-radius: 12%;
 }
-.temperature{
+.temperature {
   position: absolute;
-  margin-top: 8%;
+  margin-top: 3%;
   margin-left: 28%;
   align-items: center;
   font-size: 6rem;
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
   opacity: 0.3;
 }
-.temp-icon img{
+.temp-icon img {
   position: absolute;
-  margin-top: 30%;
+  margin-top: 35%;
 }
-.temp-description{
+.temp-description {
   color: #1eb9f7;
 }
-.temp-description, .wind-val, .temp-location, .notif{
+.temp-description,
+.wind-val,
+.temp-location,
+.notif {
   font-size: 1.5rem;
   padding-top: 5%;
 }
-.temp-location{
+.temp-location {
   font-size: 2rem;
 }
-.input-container input{
-  font-family: 'Dosis', sans-serif;
+.input-container input {
+  font-family: "Dosis", sans-serif;
 }
-.input-container h3{
-  font-family: 'Lobster', cursive;
+.input-container h3 {
+  font-family: "Lobster", cursive;
   font-size: 2rem;
   color: #075b7c;
 }
-.temp-description, .notif{
- font-weight: 5;
- opacity: 0.5;
+.temp-description,
+.notif {
+  font-weight: 5;
+  opacity: 0.5;
 }
 
 @media only screen and (min-width: 481px) {
-  .temperature{
+  .temperature {
     margin-left: 35%;
-  
   }
-  .temp-icon img{
+  .temp-icon img {
     margin-top: 35%;
   }
- 
 }
 @media only screen and (min-width: 769px) {
-  .temperature{
+  .temperature {
     font-size: 9rem;
     margin-top: 5%;
   }
-  .temp-icon img{
+  .temp-icon img {
     margin-top: 55%;
   }
-  .temp-description, .wind-val, .temp-location, .notif{
+  .temp-description,
+  .wind-val,
+  .temp-location,
+  .notif {
     font-size: 2rem;
   }
- 
 }
 @media only screen and (min-width: 769px) {
-  .temperature{
+  .temperature {
     margin-top: 3%;
     margin-left: 40%;
   }
-  .temp-description, .wind-val, .temp-location, .notif{
+  .temp-description,
+  .wind-val,
+  .temp-location,
+  .notif {
     padding-top: 5%;
   }
-  .temp-description, .wind-val, .temp-location, .notif{
+  .temp-description,
+  .wind-val,
+  .temp-location,
+  .notif {
     padding-top: 1%;
   }
 }
