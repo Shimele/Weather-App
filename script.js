@@ -94,7 +94,7 @@ searchButton.addEventListener("click", function weatherInfo() {
         iconElement.src = "./icons/scattered.png";
       }else if (descriptElement.textContent == "mist") {
         iconElement.src = "./icons/mist.png";
-      }if (descriptElement.textContent === "thunderstorm") {
+      }if (descriptElement.textContent === "thunderstorm" || descriptElement.textContent === "thunderstorm with light rain") {
         iconElement.src = "./icons/thunder.png";
       }
     });
