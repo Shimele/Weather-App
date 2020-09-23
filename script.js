@@ -31,7 +31,7 @@ searchButton.addEventListener("click", function weatherInfo() {
   const cityInput = document.querySelector(".cityInput").value;
 
   fetch(
-    `http://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=3bfbd0271d33f048e213c7535c45165f&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=3bfbd0271d33f048e213c7535c45165f&units=metric`
   )
     .then(function (response) {
       let data = response.json();
