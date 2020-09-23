@@ -53,7 +53,7 @@ searchButton.addEventListener("click", function weatherInfo() {
 
       if (minutes < 10) {
         //insert 0 infront of single digit e.g 05 instead of 5
-        minuts = `0${minutes}`;
+        minutes = `0${minutes}`;
       }
       //convert from military time (to english reading)
       if (hours == 12) {
@@ -68,7 +68,7 @@ searchButton.addEventListener("click", function weatherInfo() {
 
       //Populate Weather
       
-      notifElement.textContent = `Hi, it is ${timeDisplay}`;
+      notifElement.textContent = `Hi, it's ${timeDisplay}`;
       locationElement.textContent = openWeatherData.location;
       temperature.textContent = `${openWeatherData.temperature}°`;
       descriptElement.textContent = openWeatherData.description;
