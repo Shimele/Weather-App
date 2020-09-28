@@ -75,10 +75,7 @@ searchButton.addEventListener("click", function weatherInfo() {
       descriptElement.textContent = openWeatherData.description;
       windElement.textContent = "Wind Speed: " + wind + "mph";
 
-      const currentIcon = iconID.replace(/\s/g, "_").toUpperCase();
-      let skycons = new Skycons({"color": "pink"});
-      skycons.play();
-      skycons.set(iconElement, currentIcon);
+      
     });
 
     
