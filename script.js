@@ -42,32 +42,33 @@ searchButton.addEventListener("click", function weatherInfo() {
       openWeatherData.description = data.weather[0].description;
       openWeatherData.temperature = Math.round(data.main.temp);
       const wind = Math.round(data.wind.speed);
-      const time = new Date(data.dt * 1000 - data.timezone * 1000); //to display in miliseconds
-      console.log(time);
-      let hours = time.getHours();
-      let minutes = time.getMinutes();
+      let timeStamp = data.dt * 1000;
+      const time = new Date(data.dt * 1000).toLocaleTimeString(); //to display in miliseconds
+      console.log(data.dt);
+      //let hours = time.getHours();
+      //let minutes = time.getMinutes();
 
       //Format date and time display
-      let timeDisplay = "";
+      //let timeDisplay = "";
 
-      if (minutes < 10) {
-        //insert 0 infront of single digit e.g 05 instead of 5
-        minutes = `0${minutes}`;
-      }
+      //if (minutes < 10) {
+      //insert 0 infront of single digit e.g 05 instead of 5
+      //minutes = `0${minutes}`;
+      //}
       //convert from military time (to english reading)
-      if (hours == 12) {
-        timeDisplay = `12:${minutes} PM`;
-      } else if (hours > 12) {
-        timeDisplay = `${hours - 12}:${minutes} PM`;
-      } else if (hours == 0) {
-        timeDisplay = `12:${minutes} AM`;
-      } else {
-        timeDisplay = `${hours}:${minutes} AM`;
-      }
+      //if (hours == 12) {
+      //timeDisplay = `12:${minutes} PM`;
+      //} else if (hours > 12) {
+      //timeDisplay = `${hours - 12}:${minutes} PM`;
+      //} else if (hours == 0) {
+      //timeDisplay = `12:${minutes} AM`;
+      //} else {
+      //timeDisplay = `${hours}:${minutes} AM`;
+      //}
 
       //Populate Weather
 
-      notifElement.textContent = `Hi, it's ${timeDisplay}`;
+      notifElement.textContent = `Hi, it's ${time}`;
       locationElement.textContent = openWeatherData.location;
       temperature.textContent = `${openWeatherData.temperature}°`;
       descriptElement.textContent = openWeatherData.description;
