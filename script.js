@@ -2,7 +2,7 @@
 const searchButton = document.querySelector(".button");
 const temperature = document.querySelector(".temperature p");
 const notifElement = document.querySelector(".notif");
-const iconElement = document.querySelector(".temp-icon img");
+const iconElement = document.querySelector(".icon");
 const windElement = document.querySelector(".wind-val p");
 const descriptElement = document.querySelector(".temp-description p");
 const locationElement = document.querySelector(".temp-location p");
@@ -38,13 +38,14 @@ searchButton.addEventListener("click", function weatherInfo() {
       return data;
     })
     .then(function (data) {
-      openWeatherData.location = data.name;
+      openWeatherData.location = `${data.name}, ${data.sys.country}`;
       openWeatherData.description = data.weather[0].description;
       openWeatherData.temperature = Math.round(data.main.temp);
       const wind = Math.round(data.wind.speed);
       let timeStamp = data.dt * 1000;
       const time = new Date(data.dt * 1000).toLocaleTimeString(); //to display in miliseconds
-      console.log(data.dt);
+      const icon = data.weather[0].icon;
+      const iconID = data.weather[0].description;
       //let hours = time.getHours();
       //let minutes = time.getMinutes();
 
@@ -74,32 +75,11 @@ searchButton.addEventListener("click", function weatherInfo() {
       descriptElement.textContent = openWeatherData.description;
       windElement.textContent = "Wind Speed: " + wind + "mph";
 
-      if (descriptElement.textContent == "thunderstorm with rain") {
-        iconElement.src = "./icons/thunderstorm.png";
-      } else if (descriptElement.textContent == "overcast clouds") {
-        iconElement.src = "./icons/overcast.png";
-      } else if (descriptElement.textContent == "broken clouds") {
-        iconElement.src = "./icons/broken.png";
-      } else if (descriptElement.textContent == "moderate rain") {
-        iconElement.src = "./icons/moderate.png";
-      } else if (descriptElement.textContent == "clear sky") {
-        iconElement.src = "./icons/clearSkies.png";
-      } else if (descriptElement.textContent === "light rain") {
-        iconElement.src = "./icons/light-rain.png";
-      } else if (descriptElement.textContent == "heavy intensity rain") {
-        iconElement.src = "./icons/heavy.png";
-      } else if (descriptElement.textContent == "few clouds") {
-        iconElement.src = "./icons/few-clouds.png";
-      } else if (descriptElement.textContent == "scattered clouds") {
-        iconElement.src = "./icons/scattered.png";
-      } else if (descriptElement.textContent == "mist") {
-        iconElement.src = "./icons/mist.png";
-      }
-      if (
-        descriptElement.textContent === "thunderstorm" ||
-        descriptElement.textContent === "thunderstorm with light rain"
-      ) {
-        iconElement.src = "./icons/thunder.png";
-      }
+      const currentIcon = iconID.replace(/\s/g, "_").toUpperCase();
+      let skycons = new Skycons({"color": "pink"});
+      skycons.play();
+      skycons.set(iconElement, currentIcon);
     });
+
+    
 });

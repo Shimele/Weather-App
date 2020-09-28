@@ -30,6 +30,7 @@ body {
 }
 .temp-description {
   color: #1eb9f7;
+  margin-top: 15%;
 }
 .temp-description,
 .wind-val,
