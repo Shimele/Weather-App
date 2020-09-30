@@ -42,11 +42,23 @@ searchButton.addEventListener("click", function weatherInfo() {
       openWeatherData.description = data.weather[0].description;
       openWeatherData.temperature = Math.round(data.main.temp);
       const wind = Math.round(data.wind.speed);
-      let timeStamp = data.dt * 1000;
-      const time = new Date(data.dt * 1000).toLocaleTimeString(); //to display in miliseconds
+      let timezone = data.timezone;
+      let timeStamp = new Date(data.dt * 1000);
+      const time = new Date(data.dt * 1000).toLocaleTimeString(); //convert timestamp to local time display in miliseconds
       const icon = data.weather[0].icon;
       const iconID = data.weather[0].description;
-      //let hours = time.getHours();
+      let hours = timeStamp.getHours();
+      let afternoon = 12; //24hr time to split the afternoon
+      let evening = 17; //24hr time to split the evening
+
+      console.log(hours);
+      if (hours >= afternoon && hours <= evening) {
+        console.log("it is afternoon");
+      } else if (hours >= evening) {
+        console.log("it is evening");
+      } else {
+        console.log("it is morning");
+      }
       //let minutes = time.getMinutes();
 
       //Format date and time display
@@ -74,9 +86,13 @@ searchButton.addEventListener("click", function weatherInfo() {
       temperature.textContent = `${openWeatherData.temperature}°`;
       descriptElement.textContent = openWeatherData.description;
       windElement.textContent = "Wind Speed: " + wind + "mph";
-
-      
     });
 
-    
+  function dateToGMT(date = timeStamp, offset = 0) {
+    let hours = date.getUTCHours() + offset;
+    if (hours > 23) hours = 24 - hours;
+    if (hours < 0) hours = 24 + hours;
+    return `${hours}:${date.getUTCMinutes()}:${date.getUTCSeconds()}`;
+  }
+  dateToGMT;
 });
