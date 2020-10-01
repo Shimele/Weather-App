@@ -87,12 +87,4 @@ searchButton.addEventListener("click", function weatherInfo() {
       descriptElement.textContent = openWeatherData.description;
       windElement.textContent = "Wind Speed: " + wind + "mph";
     });
-
-  function dateToGMT(date = timeStamp, offset = 0) {
-    let hours = date.getUTCHours() + offset;
-    if (hours > 23) hours = 24 - hours;
-    if (hours < 0) hours = 24 + hours;
-    return `${hours}:${date.getUTCMinutes()}:${date.getUTCSeconds()}`;
-  }
-  dateToGMT;
 });
