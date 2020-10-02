@@ -15,10 +15,10 @@ body {
   padding-top: 5%;
   padding-bottom: 5%;
   background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
 }
 .ui.container {
-  height: 90%;
+  height: 100%;
 }
 
 .temperature {
@@ -28,7 +28,7 @@ body {
   align-items: center;
   font-size: 6rem;
   font-family: "Dosis", sans-serif;
-  color: #39cccc;
+  color: #aaaaaa;
   opacity: 1;
 }
 .temp-icon img {
