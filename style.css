@@ -14,12 +14,11 @@ body {
   padding-top: 15%;
   color: white;
   background: inherit;
-  min-height: 55rem;
+  min-height: 40rem;
   width: 80%;
   height: 100px;
   margin: 0 auto;
   position: absolute;
-  border-radius: 12%;
 }
 .display:before {
   content: "";
@@ -28,8 +27,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  max-height: 50rem;
-  width: 100%;
+  max-height: 40rem;
+  min-width: 100%;
   box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
   filter: blur(5px);
   background: inherit;
@@ -68,6 +67,7 @@ body {
   font-family: "Lobster", cursive;
   font-size: 2rem;
   color: #165203;
+  color: #520338;
 }
 .temp-description,
 .notif {
