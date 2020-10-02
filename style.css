@@ -28,8 +28,8 @@ body {
   align-items: center;
   font-size: 6rem;
   font-family: "Dosis", sans-serif;
-  color: #aaaaaa;
-  opacity: 1;
+  color: pink;
+  opacity: 0.7;
 }
 .temp-icon img {
   position: absolute;
@@ -102,6 +102,7 @@ body {
   .temperature {
     margin-top: 3%;
     margin-left: 41%;
+    font-size: 7rem;
   }
   .temp-description,
   .wind-val,

@@ -52,12 +52,13 @@ searchButton.addEventListener("click", function weatherInfo() {
       let evening = 17; //24hr time to split the evening
 
       console.log(hours);
-      if (hours >= afternoon && hours <= evening) {
-        console.log("it is afternoon");
-      } else if (hours >= evening) {
-        console.log("it is evening");
-      } else {
-        console.log("it is morning");
+      if (hours < 16)
+      {
+        document.body.style.backgroundImage = "url('./icons/bg.jpg')";
+      }else if (hours > 16 && hours < 19) {
+        document.body.style.backgroundImage = "url('./icons/bg2.jpg')";
+      }else if (hours > 19 || hours < 5) {
+        document.body.style.backgroundImage = "url('./icons/bg3.jpg')";
       }
       //let minutes = time.getMinutes();
 
@@ -87,4 +88,5 @@ searchButton.addEventListener("click", function weatherInfo() {
       descriptElement.textContent = openWeatherData.description;
       windElement.textContent = "Wind Speed: " + wind + "mph";
     });
+    
 });
