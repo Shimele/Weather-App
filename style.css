@@ -11,11 +11,14 @@ body {
   background-size: cover;
 }
 .display {
-  margin-top: 15%;
+  margin-top: 10%;
   padding-top: 5%;
   padding-bottom: 5%;
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
+}
+.ui.container {
+  height: 90%;
 }
 
 .temperature {
@@ -38,13 +41,13 @@ body {
   font-weight: bold;
 }
 .wind-val {
-  color: #39cccc;
+  color: #aaaaaa;
 }
 .notif {
   color: #aaaaaa;
 }
 .temp-location {
-  color: #2ecc40;
+  color: #536d34;
 }
 .temp-description,
 .wind-val,
