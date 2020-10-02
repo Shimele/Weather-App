@@ -1,4 +1,5 @@
 //selecting elements
+
 const searchButton = document.querySelector(".button");
 const temperature = document.querySelector(".temperature p");
 const notifElement = document.querySelector(".notif");
@@ -38,6 +39,7 @@ searchButton.addEventListener("click", function weatherInfo() {
       return data;
     })
     .then(function (data) {
+      console.log(data)
       openWeatherData.location = `${data.name}, ${data.sys.country}`;
       openWeatherData.description = data.weather[0].description;
       openWeatherData.temperature = Math.round(data.main.temp);
@@ -45,11 +47,9 @@ searchButton.addEventListener("click", function weatherInfo() {
       let timezone = data.timezone;
       let timeStamp = new Date(data.dt * 1000);
       const time = new Date(data.dt * 1000).toLocaleTimeString(); //convert timestamp to local time display in miliseconds
-      const icon = data.weather[0].icon;
       const iconID = data.weather[0].description;
       let hours = timeStamp.getHours();
-      let afternoon = 12; //24hr time to split the afternoon
-      let evening = 17; //24hr time to split the evening
+      const icon = new Skycons({"color": "#222"})
 
       console.log(hours);
       if (hours < 16)
@@ -81,7 +81,8 @@ searchButton.addEventListener("click", function weatherInfo() {
       //}
 
       //Populate Weather
-
+      icon.set('icon', data.weather[0].description)
+      icon.play()
       notifElement.textContent = `Hi, it's ${time}`;
       locationElement.textContent = openWeatherData.location;
       temperature.textContent = `${openWeatherData.temperature}°`;
