@@ -16,6 +16,7 @@ body {
   background: inherit;
   min-height: 55rem;
   width: 80%;
+  height: 100px;
   margin: 0 auto;
   position: absolute;
   border-radius: 12%;
@@ -98,10 +99,10 @@ body {
   }
 }
 @media only screen and (min-width: 1025px) {
-  .ui.container {
+  .display {
     padding-top: 3%;
-    min-height: 35rem;
-    width: 50%;
+    min-height: 100px;
+    width: 30%;
   }
   .temperature {
     margin-top: 3%;
