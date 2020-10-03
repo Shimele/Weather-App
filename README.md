@@ -1,9 +1,9 @@
 # Weather-App
- Information gotten from the Open Weather Map API
 
+Information gotten from the Open Weather Map API
 
-![alt text](https://github.com/Shimele/Weather-App/blob/master/icons/screenshot.JPG)
+![alt text](https://github.com/Shimele/Weather-App/blob/master/icons/screenshot.png)
 
 ## Live demo (work in progress, only desktop version for now)
-https://shimele.github.io/Weather-App/
 
+https://shimele.github.io/Weather-App/
