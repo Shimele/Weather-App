@@ -39,25 +39,17 @@ searchButton.addEventListener("click", function weatherInfo() {
       return data;
     })
     .then(function (data) {
-      console.log(data)
       openWeatherData.location = `${data.name}, ${data.sys.country}`;
       openWeatherData.description = data.weather[0].description;
       openWeatherData.temperature = Math.round(data.main.temp);
       const wind = Math.round(data.wind.speed);
-      let timezone = data.timezone;
       let timeStamp = new Date(data.dt * 1000);
       const time = new Date(data.dt * 1000).toLocaleTimeString(); //convert timestamp to local time display in miliseconds
-      const iconID = data.weather[0].description;
       let hours = timeStamp.getHours();
-      const icon = new Skycons({"color": "#222"})
 
-      console.log(hours);
-      if (hours < 16)
-      {
+      if (data.weather[0].icon.indexOf("d") > -1) {
         document.body.style.backgroundImage = "url('./icons/bg.jpg')";
-      }else if (hours > 16 && hours < 19) {
-        document.body.style.backgroundImage = "url('./icons/bg2.jpg')";
-      }else if (hours > 19 || hours < 5) {
+      } else {
         document.body.style.backgroundImage = "url('./icons/bg3.jpg')";
       }
       //let minutes = time.getMinutes();
@@ -81,13 +73,12 @@ searchButton.addEventListener("click", function weatherInfo() {
       //}
 
       //Populate Weather
-      icon.set('icon', data.weather[0].description)
-      icon.play()
       notifElement.textContent = `Hi, it's ${time}`;
       locationElement.textContent = openWeatherData.location;
       temperature.textContent = `${openWeatherData.temperature}°`;
+      iconElement.src =
+        " http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
       descriptElement.textContent = openWeatherData.description;
       windElement.textContent = "Wind Speed: " + wind + "mph";
     });
-    
 });

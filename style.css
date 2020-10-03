@@ -31,6 +31,11 @@ body {
   color: pink;
   opacity: 0.7;
 }
+.weather-icon img {
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 30%;
+}
 .temp-icon img {
   position: absolute;
   margin-top: 35%;
@@ -40,7 +45,7 @@ body {
   margin-top: 25%;
 }
 .wind-val {
-  color: #aaaaaa;
+  color: #ffffff;
 }
 .notif {
   color: #aaaaaa;
@@ -74,6 +79,9 @@ body {
   .temp-icon img {
     margin-top: 35%;
   }
+  .weather-icon img {
+    margin-left: 40%;
+  }
 }
 @media only screen and (min-width: 769px) {
   .temperature {
@@ -88,6 +96,9 @@ body {
   .temp-location,
   .notif {
     font-size: 2rem;
+  }
+  .weather-icon img {
+    margin-left: 40%;
   }
 }
 @media only screen and (min-width: 1025px) {
