@@ -29,24 +29,20 @@ body {
   font-size: 6rem;
   font-family: "Dosis", sans-serif;
   color: pink;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 .weather-icon img {
   position: absolute;
   margin-top: 10%;
   margin-left: 30%;
 }
-.temp-icon img {
-  position: absolute;
-  margin-top: 35%;
-}
+
 .notif {
   color: #ffffff;
   font-size: 1.3rem;
   font-family: "Courgette", cursive;
 }
 .temp-location {
-  color: #91a307;
   font-size: 2.5rem;
   padding-top: 5%;
 }

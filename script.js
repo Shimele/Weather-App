@@ -100,7 +100,7 @@ searchButton.addEventListener("click", function weatherInfo() {
       //Populate Weather
       notifElement.textContent = `Hi, it's ${time}`;
       locationElement.textContent = openWeatherData.location;
-      locationElement.style.color = "#3f460b";
+      locationElement.style.color = "#91a307";
       temperature.textContent = `${openWeatherData.temperature}°`;
       iconElement.src =
         " http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
