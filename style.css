@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Dosis:wght@600&family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Courgette&family=Gochi+Hand&family=Pacifico&display=swap");
 
 body {
   margin: 0;
@@ -29,7 +29,7 @@ body {
   font-size: 6rem;
   font-family: "Dosis", sans-serif;
   color: pink;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 .weather-icon img {
   position: absolute;
@@ -40,33 +40,37 @@ body {
   position: absolute;
   margin-top: 35%;
 }
-.temp-description {
-  color: #536d34;
-  margin-top: 25%;
-}
-.wind-val {
-  color: #ffffff;
-}
 .notif {
-  color: #aaaaaa;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-family: "Courgette", cursive;
 }
 .temp-location {
-  color: #536d34;
-}
-.temp-description,
-.wind-val,
-.temp-location,
-.notif {
-  font-size: 2rem;
+  color: #3f460b;
+  font-size: 2.5rem;
   padding-top: 5%;
 }
-.input-container input {
+.temp-description {
+  font-size: 1.5rem;
+  color: #3f460b;
+  padding-top: 3%;
+  margin-top: 20%;
+}
+.wind-val,
+.humidity-val {
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+.cityInput {
   font-family: "Dosis", sans-serif;
+  color: #ffffff !important;
+  font-size: 1rem;
+  background-color: rgb(231, 201, 206) !important;
 }
 .input-container h3 {
   font-family: "Lobster", cursive;
   font-size: 2rem;
-  color: #001f3f;
+  color: pink;
 }
 
 @media only screen and (min-width: 481px) {
@@ -76,26 +80,20 @@ body {
   .temp-description {
     margin-top: 20%;
   }
-  .temp-icon img {
-    margin-top: 35%;
-  }
   .weather-icon img {
     margin-left: 40%;
   }
 }
 @media only screen and (min-width: 769px) {
+  .cityInput {
+    font-size: 1.5rem;
+  }
   .temperature {
     font-size: 5rem;
     margin-top: 5%;
   }
   .temp-icon img {
     margin-top: 55%;
-  }
-  .temp-description,
-  .wind-val,
-  .temp-location,
-  .notif {
-    font-size: 2rem;
   }
   .weather-icon img {
     margin-left: 40%;
@@ -104,7 +102,7 @@ body {
 @media only screen and (min-width: 1025px) {
   .display {
     margin-top: 2%;
-    padding-top: 3%;
+    padding-top: 2%;
   }
   .ui.container {
     width: 50%;
@@ -115,14 +113,9 @@ body {
     margin-left: 41%;
     font-size: 7rem;
   }
-  .temp-description,
-  .wind-val,
-  .temp-location,
-  .notif {
-    padding-top: 5%;
-  }
+
   .temp-description {
-    margin-top: 20%;
+    margin-top: 15%;
   }
   .temp-description,
   .wind-val,

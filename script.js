@@ -1,13 +1,14 @@
 //selecting elements
-
 const searchButton = document.querySelector(".button");
 const temperature = document.querySelector(".temperature p");
 const notifElement = document.querySelector(".notif");
 const iconElement = document.querySelector(".icon");
 const windElement = document.querySelector(".wind-val p");
+const humidityElement = document.querySelector(".humidity-val p");
 const descriptElement = document.querySelector(".temp-description p");
 const locationElement = document.querySelector(".temp-location p");
 
+//errorDisplay.style.display = "none";
 let openWeatherData = {};
 //let xhr = new XMLHttpRequest();
 //xhr.open(
@@ -35,6 +36,10 @@ searchButton.addEventListener("click", function weatherInfo() {
     `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=3bfbd0271d33f048e213c7535c45165f&units=metric`
   )
     .then(function (response) {
+      if (response.status == 404) {
+        locationElement.style.color = "red";
+        locationElement.textContent = "Please enter a vaid city name";
+      }
       let data = response.json();
       return data;
     })
@@ -43,14 +48,34 @@ searchButton.addEventListener("click", function weatherInfo() {
       openWeatherData.description = data.weather[0].description;
       openWeatherData.temperature = Math.round(data.main.temp);
       const wind = Math.round(data.wind.speed);
-      let timeStamp = new Date(data.dt * 1000);
+      const humidity = data.main.humidity;
       const time = new Date(data.dt * 1000).toLocaleTimeString(); //convert timestamp to local time display in miliseconds
-      let hours = timeStamp.getHours();
 
-      if (data.weather[0].icon.indexOf("d") > -1) {
-        document.body.style.backgroundImage = "url('./icons/bg.jpg')";
-      } else {
+      //change background according to day/night and description
+      if (
+        data.weather[0].icon.indexOf("d") > -1 &&
+        data.weather[0].description.indexOf("rain" || "drizzle") > -1
+      ) {
+        document.body.style.backgroundImage = "url('./icons/bg-drain.jpg')";
+      } else if (
+        data.weather[0].icon.indexOf("d") > -1 &&
+        data.weather[0].description.indexOf("snow") > -1
+      ) {
+        document.body.style.backgroundImage = "url('./icons/bg-dsnow.jpg')";
+      } else if (
+        data.weather[0].icon.indexOf("n") > -1 &&
+        data.weather[0].description.indexOf("rain" || "drizzle") > -1
+      ) {
+        document.body.style.backgroundImage = "url('./icons/bg-nrain.jpg')";
+      } else if (
+        data.weather[0].icon.indexOf("n") > -1 &&
+        data.weather[0].description.indexOf("snow") > -1
+      ) {
+        document.body.style.backgroundImage = "url('./icons/bg-nsnow.jpg')";
+      } else if (data.weather[0].icon.indexOf("n") > -1) {
         document.body.style.backgroundImage = "url('./icons/bg3.jpg')";
+      } else {
+        document.body.style.backgroundImage = "url('./icons/bg.jpg')";
       }
       //let minutes = time.getMinutes();
 
@@ -75,10 +100,12 @@ searchButton.addEventListener("click", function weatherInfo() {
       //Populate Weather
       notifElement.textContent = `Hi, it's ${time}`;
       locationElement.textContent = openWeatherData.location;
+      locationElement.style.color = "#3f460b";
       temperature.textContent = `${openWeatherData.temperature}°`;
       iconElement.src =
         " http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
       descriptElement.textContent = openWeatherData.description;
-      windElement.textContent = "Wind Speed: " + wind + "mph";
+      windElement.textContent = "Wind Speed at : " + wind + "mph";
+      humidityElement.textContent = "Humidity level: " + humidity + "%";
     });
 });
