@@ -1,7 +1,8 @@
 //selecting elements
 const searchButton = document.querySelector(".button");
 const temperature = document.querySelector(".temperature p");
-const notifElement = document.querySelector(".notif");
+let greetings = document.querySelector(".notif span");
+const notifElement = document.querySelector(".notif p");
 const iconElement = document.querySelector(".icon");
 const windElement = document.querySelector(".wind-val p");
 const humidityElement = document.querySelector(".humidity-val p");
@@ -10,6 +11,17 @@ const locationElement = document.querySelector(".temp-location p");
 
 //errorDisplay.style.display = "none";
 let openWeatherData = {};
+//greetings;
+let countryData = {
+  US: "Hello!",
+  UK: "Hi!",
+  FR: "Salut!",
+  CN: "Nǐ hǎo!",
+  ES: "Hola!",
+  IT: "Ciao!",
+  DE: "Hallo!",
+  RU: "Zdravstvuyte!",
+};
 //let xhr = new XMLHttpRequest();
 //xhr.open(
 //"GET",
@@ -45,11 +57,19 @@ searchButton.addEventListener("click", function weatherInfo() {
     })
     .then(function (data) {
       openWeatherData.location = `${data.name}, ${data.sys.country}`;
+      openWeatherData.countryName = data.sys.country;
       openWeatherData.description = data.weather[0].description;
       openWeatherData.temperature = Math.round(data.main.temp);
       const wind = Math.round(data.wind.speed);
       const humidity = data.main.humidity;
       const time = new Date(data.dt * 1000).toLocaleTimeString(); //convert timestamp to local time display in miliseconds
+
+      //change greetings according to country
+      for (let country in countryData) {
+        if (country == openWeatherData.countryName) {
+          greetings.textContent = countryData[country];
+        }
+      }
 
       //change background according to day/night and description
       if (
@@ -98,7 +118,7 @@ searchButton.addEventListener("click", function weatherInfo() {
       //}
 
       //Populate Weather
-      notifElement.textContent = `Hi, it's ${time}`;
+      notifElement.textContent = ` ${time}`;
       locationElement.textContent = openWeatherData.location;
       locationElement.style.color = "#91a307";
       temperature.textContent = `${openWeatherData.temperature}°`;
