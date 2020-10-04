@@ -12,7 +12,7 @@ const locationElement = document.querySelector(".temp-location p");
 //errorDisplay.style.display = "none";
 let openWeatherData = {};
 //greetings;
-let countryData = {
+const countryData = {
   US: "Hello!",
   UK: "Hi!",
   FR: "Salut!",
@@ -22,8 +22,7 @@ let countryData = {
   DE: "Hallo!",
   RU: "Zdravstvuyte!",
   IN: "Namaste!",
-  PT: "Olá",
-  PT: "Olá",
+  PT: "Olá!",
 };
 //let xhr = new XMLHttpRequest();
 //xhr.open(
@@ -68,11 +67,10 @@ searchButton.addEventListener("click", function weatherInfo() {
       const time = new Date(data.dt * 1000).toLocaleTimeString(); //convert timestamp to local time display in miliseconds
 
       //change greetings according to country
+
       for (let country in countryData) {
         if (country == openWeatherData.countryName) {
-          greetings.innerHTML = countryData[country];
-        } else {
-          greetings.textContent = "Hey!";
+          greetings.textContent = countryData[country];
         }
       }
 
