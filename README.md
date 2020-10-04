@@ -4,6 +4,6 @@ Information gotten from the Open Weather Map API
 
 ![alt text](https://github.com/Shimele/Weather-App/blob/master/icons/screenshot.png)
 
-## Live demo (work in progress, only desktop version for now)
+## Live demo
 
 https://shimele.github.io/Weather-App/
