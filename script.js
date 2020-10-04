@@ -70,7 +70,7 @@ searchButton.addEventListener("click", function weatherInfo() {
       //change greetings according to country
       for (let country in countryData) {
         if (country == openWeatherData.countryName) {
-          greetings.textContent = countryData[country];
+          greetings.innerHTML = countryData[country];
         } else {
           greetings.textContent = "Hey!";
         }
