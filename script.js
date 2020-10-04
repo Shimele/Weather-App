@@ -21,6 +21,9 @@ let countryData = {
   IT: "Ciao!",
   DE: "Hallo!",
   RU: "Zdravstvuyte!",
+  IN: "Namaste!",
+  PT: "Olá",
+  PT: "Olá",
 };
 //let xhr = new XMLHttpRequest();
 //xhr.open(
@@ -68,6 +71,8 @@ searchButton.addEventListener("click", function weatherInfo() {
       for (let country in countryData) {
         if (country == openWeatherData.countryName) {
           greetings.textContent = countryData[country];
+        } else {
+          greetings.textContent = "Hey!";
         }
       }
 
