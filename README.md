@@ -1,6 +1,6 @@
 # Weather-App
 
-Weatger App with Vanilla Javascript.
+Weather App with Vanilla Javascript.
 Information gotten from the Open Weather Map API
 
 ![alt text](https://github.com/Shimele/Weather-App/blob/master/icons/screenshot.png)
