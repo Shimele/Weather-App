@@ -14,7 +14,7 @@ let openWeatherData = {};
 //greetings;
 const countryData = {
   US: "Hello!",
-  UK: "Hi!",
+  GB: "Hi!",
   FR: "Salut!",
   CN: "Nǐ hǎo!",
   ES: "Hola!",
