@@ -95,7 +95,18 @@ searchButton.addEventListener("click", function weatherInfo() {
         data.weather[0].description.indexOf("snow") > -1
       ) {
         document.body.style.backgroundImage = "url('./icons/bg-nsnow.jpg')";
-      } else if (data.weather[0].icon.indexOf("n") > -1) {
+      }else if (
+        data.weather[0].icon.indexOf("d") > -1 &&
+        data.weather[0].description.indexOf("haze" || "fog" || "mist") > -1
+      ) {
+        document.body.style.backgroundImage = "url('./icons/bg-dhaze.jpg')";
+      }else if (
+        data.weather[0].icon.indexOf("n") > -1 &&
+        data.weather[0].description.indexOf("haze" || "fog" || "mist") > -1
+      ) {
+        document.body.style.backgroundImage = "url('./icons/bg-nhaze.jpg')";
+      }
+       else if (data.weather[0].icon.indexOf("n") > -1) {
         document.body.style.backgroundImage = "url('./icons/bg3.jpg')";
       } else {
         document.body.style.backgroundImage = "url('./icons/bg.jpg')";
