@@ -1,5 +1,5 @@
-var cacheName = "js13kPWA-v1"; //create variable for storing the cache name
-var appShellFiles = [
+const cacheName = "js13kPWA-v1"; //create variable for storing the cache name
+let appShellFiles = [
   //app shell files are listed in one array.
   "index.html",
   "script.js",
@@ -18,7 +18,7 @@ self.addEventListener("install", (e) => {
   e.waitUntil(
     caches.open(cacheName).then((cache) => {
       console.log("[Service Worker] Caching all: app shell and content");
-      return cache.addAll(contentToCache);
+      return cache.addAll(appShellFiles);
     })
   );
 });
