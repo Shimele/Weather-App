@@ -67,7 +67,6 @@ searchButton.addEventListener("click", function weatherInfo() {
       const time = new Date(data.dt * 1000).toLocaleTimeString(); //convert timestamp to local time display in miliseconds
 
       //change greetings according to country
-
       for (let country in countryData) {
         if (country == openWeatherData.countryName) {
           greetings.textContent = countryData[country];
@@ -95,18 +94,17 @@ searchButton.addEventListener("click", function weatherInfo() {
         data.weather[0].description.indexOf("snow") > -1
       ) {
         document.body.style.backgroundImage = "url('./icons/bg-nsnow.jpg')";
-      }else if (
+      } else if (
         data.weather[0].icon.indexOf("d") > -1 &&
         data.weather[0].description.indexOf("haze" || "fog" || "mist") > -1
       ) {
         document.body.style.backgroundImage = "url('./icons/bg-dhaze.jpg')";
-      }else if (
+      } else if (
         data.weather[0].icon.indexOf("n") > -1 &&
         data.weather[0].description.indexOf("haze" || "fog" || "mist") > -1
       ) {
         document.body.style.backgroundImage = "url('./icons/bg-nhaze.jpg')";
-      }
-       else if (data.weather[0].icon.indexOf("n") > -1) {
+      } else if (data.weather[0].icon.indexOf("n") > -1) {
         document.body.style.backgroundImage = "url('./icons/bg3.jpg')";
       } else {
         document.body.style.backgroundImage = "url('./icons/bg.jpg')";
