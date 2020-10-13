@@ -97,8 +97,10 @@ searchButton.addEventListener("click", function weatherInfo() {
       ) {
         document.body.style.backgroundImage = "url('./icons/bg-nsnow.jpg')";
       } else if (
-        data.weather[0].icon.indexOf("d") > -1 &&
-        data.weather[0].description.indexOf("haze" || "fog" || "mist") > -1
+        (data.weather[0].icon.indexOf("d") > -1 &&
+          data.weather[0].description.indexOf("haze") > -1) ||
+        data.weather[0].description.indexOf("mist") > -1 ||
+        data.weather[0].description.indexOf("fog") > -1
       ) {
         document.body.style.backgroundImage = "url('./icons/bg-dhaze.jpg')";
       } else if (
