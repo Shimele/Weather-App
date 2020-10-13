@@ -64,7 +64,9 @@ searchButton.addEventListener("click", function weatherInfo() {
       openWeatherData.temperature = Math.round(data.main.temp);
       const wind = Math.round(data.wind.speed);
       const humidity = data.main.humidity;
-      const time = new Date(data.dt * 1000).toLocaleTimeString(); //convert timestamp to local time display in miliseconds
+      const time = new Date(
+        data.dt * 1000 + data.timezone * 1000 - 3600000 /*1hour in miliseconds*/
+      ).toLocaleTimeString(); //convert timestamp to local time display in miliseconds
 
       //change greetings according to country
       for (let country in countryData) {
